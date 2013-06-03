@@ -16,9 +16,11 @@ def gccontent(fasta):
 	#Split file into fragments
 	fragments = rawdna.split('\n')
 	fragmentgc = []
+
 	#Calculate the GC for each fragment
 	for i in range(len(fragments)):
 		fragmentgc.append(calculategc(fragments[i]))
+	
 	#Return the label, aka index-1 of the fragment with max GC
 	print fragments[fragmentgc.index(max(fragmentgc))-1].strip('>')
 	print max(fragmentgc)
